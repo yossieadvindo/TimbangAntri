@@ -10,9 +10,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login)
-        btnLogin.setOnClickListener({login(emailLogin.text.toString(), passwordLogin.text.toString())})
-        txtsignup.setOnClickListener({showRegisterActivity()})
+        setContentView(R.layout.activity_home)
+//        btnLogin.setOnClickListener({login(emailLogin.text.toString(), passwordLogin.text.toString())})
+//        txtsignup.setOnClickListener({showRegisterActivity()})
     }
 
     fun login(email: String, password:String){

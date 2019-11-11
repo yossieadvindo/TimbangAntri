@@ -17,8 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Home" />
-        <activity android:name=".Register" />
+        <activity
+            android:name=".Home"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".Register"></activity>
     </application>
 
 </manifest>

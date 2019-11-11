@@ -3,19 +3,40 @@ package id.ac.ukdw.timbangantri
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_home.*
 
-class Home : AppCompatActivity(){
+class Home : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        logOut.setOnClickListener({showHomeActivity()})
+        imageView6.setOnClickListener {
+            showBengkelTerdekat()
+        }
+        imageView10.setOnClickListener {
+            showHomeActivity()
+        }
+
     }
 
-    fun showHomeActivity(){
+    fun showBengkelTerdekat() {
+        var i: Intent = Intent(this, BengkelTerdekat::class.java)
+//        i.putExtra()
+        startActivity(i)
+    }
+
+    fun showHomeActivity() {
         var i: Intent = Intent(this, MainActivity::class.java)
 //        i.putExtra()
         startActivity(i)
     }
+
 }

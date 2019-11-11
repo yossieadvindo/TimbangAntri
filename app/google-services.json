@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "53359404794",
+    "firebase_url": "https://timbangantri-4f420.firebaseio.com",
+    "project_id": "timbangantri-4f420",
+    "storage_bucket": "timbangantri-4f420.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53359404794:android:0913fabfe2211055cdcb43",
+        "android_client_info": {
+          "package_name": "id.ac.ukdw.timbangantri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53359404794-m03lth3vva446quheicu7h50kel3s7p7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.ukdw.timbangantri",
+            "certificate_hash": "1a709c62917f265cdf7237a69c286516b694cd17"
+          }
+        },
+        {
+          "client_id": "53359404794-qta15pok9ok1nndclu05u6kifu5nr0t5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWgQLcqFsdjKx558fBtrftsb7lJma2UuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53359404794-qta15pok9ok1nndclu05u6kifu5nr0t5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

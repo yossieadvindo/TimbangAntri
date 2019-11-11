@@ -95,7 +95,7 @@
         android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnDaftar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -104,5 +104,13 @@
         android:layout_marginBottom="5dp"
         android:backgroundTint="#82CCDD"
         android:text="Daftar" />
+
+    <TextView
+        android:id="@+id/loginkuy"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="Login"
+        android:textColor="#FF5722" />
 
 </LinearLayout>

@@ -11,22 +11,31 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_home.*
 
-class Home : AppCompatActivity(){
+class Home : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        imageView6.setOnClickListener{
+        imageView6.setOnClickListener {
             showBengkelTerdekat()
+        }
+        imageView10.setOnClickListener {
+            showHomeActivity()
         }
 
     }
 
-    fun showBengkelTerdekat(){
+    fun showBengkelTerdekat() {
         var i: Intent = Intent(this, BengkelTerdekat::class.java)
 //        i.putExtra()
         startActivity(i)
     }
 
+    fun showHomeActivity() {
+        var i: Intent = Intent(this, MainActivity::class.java)
+//        i.putExtra()
+        startActivity(i)
     }
+
+}

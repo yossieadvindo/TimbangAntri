@@ -15,7 +15,7 @@
         app:srcCompat="@drawable/signup" />
 
     <EditText
-        android:id="@+id/txtEmail"
+        android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -29,7 +29,7 @@
         android:visibility="visible" />
 
     <EditText
-        android:id="@+id/txtPass"
+        android:id="@+id/edtPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -43,7 +43,7 @@
         android:visibility="visible" />
 
     <EditText
-        android:id="@+id/txtPassAgain"
+        android:id="@+id/edtPassAgain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"

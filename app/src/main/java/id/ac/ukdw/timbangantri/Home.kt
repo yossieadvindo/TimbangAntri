@@ -27,6 +27,22 @@ class Home : AppCompatActivity() {
         imageView3.setOnClickListener {
             showBooking()
         }
+        imageView11.setOnClickListener {
+            showListHarga()
+        }
+        imageView9.setOnClickListener {
+            showSetting()
+        }
+    }
+    fun showSetting(){
+        var i: Intent = Intent(this, Setting::class.java)
+//        i.putExtra()
+        startActivity(i)
+    }
+    fun showListHarga(){
+        var i: Intent = Intent(this, Pricelist::class.java)
+//        i.putExtra()
+        startActivity(i)
     }
     fun showBooking(){
         var i: Intent = Intent(this, Pesan::class.java)

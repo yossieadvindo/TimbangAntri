@@ -30,6 +30,8 @@
         <activity android:name=".Home"></activity>
         <activity android:name=".Register"></activity>
         <activity android:name=".BengkelTerdekat"></activity>
+        <activity android:name=".Pricelist"></activity>
+        <activity android:name=".Setting"></activity>
 
 
 

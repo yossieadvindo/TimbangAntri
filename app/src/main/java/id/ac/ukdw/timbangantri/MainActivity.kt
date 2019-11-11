@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
             showHomeActivity()
         }else{
             Toast.makeText(this, "Login Gagal", Toast.LENGTH_LONG).show()
-
         }
     }
 

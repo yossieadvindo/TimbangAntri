@@ -13,8 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key"/>
+
+        <activity android:name=".booking"></activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +26,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Home"></activity>
         <activity android:name=".Register"></activity>
         <activity android:name=".BengkelTerdekat"></activity>
+
     </application>
 
 

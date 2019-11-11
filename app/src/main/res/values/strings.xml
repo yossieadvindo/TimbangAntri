@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TimbangAntri</string>
+    <string name="map_key" translatable="false">AIzaSyCTJ7NJT0_zuUGjJWFoulVWDLQ6anMrc94</string>
 </resources>

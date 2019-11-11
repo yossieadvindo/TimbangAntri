@@ -17,7 +17,7 @@
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key"/>
 
-        <activity android:name=".booking"></activity>
+        <activity android:name=".Pesan"></activity>
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -30,6 +30,7 @@
         <activity android:name=".Home"></activity>
         <activity android:name=".Register"></activity>
         <activity android:name=".BengkelTerdekat"></activity>
+
 
 
     </application>

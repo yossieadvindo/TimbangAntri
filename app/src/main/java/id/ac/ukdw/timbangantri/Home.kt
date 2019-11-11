@@ -24,9 +24,15 @@ class Home : AppCompatActivity() {
         imageView10.setOnClickListener {
             showHomeActivity()
         }
-
+        imageView3.setOnClickListener {
+            showBooking()
+        }
     }
-
+    fun showBooking(){
+        var i: Intent = Intent(this, Pesan::class.java)
+//        i.putExtra()
+        startActivity(i)
+    }
     fun showBengkelTerdekat() {
         var i: Intent = Intent(this, BengkelTerdekat::class.java)
 //        i.putExtra()

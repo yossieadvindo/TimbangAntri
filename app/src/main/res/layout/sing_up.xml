@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/signup"
+    android:orientation="vertical"
     tools:context=".Register">
 
     <ImageView
+        android:id="@+id/loginkuy"
+        android:layout_width="77dp"
+        android:layout_height="33dp"
+        app:srcCompat="@drawable/left" />
+
+    <ImageView
         android:id="@+id/imageView"
-        android:layout_width="410dp"
-        android:layout_height="178dp"
-        app:srcCompat="@drawable/signup" />
+        android:layout_width="match_parent"
+        android:layout_height="112dp" />
 
     <EditText
         android:id="@+id/edtEmail"
@@ -67,6 +72,7 @@
             android:id="@+id/txtNamaDepan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="left"
             android:layout_weight="1"
             android:ems="10"
             android:hint="Nama Depan"
@@ -76,6 +82,7 @@
             android:id="@+id/txtNamaBlkng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
             android:layout_weight="1"
             android:ems="10"
             android:hint="Nama Belakang"
@@ -94,23 +101,24 @@
         android:hint="Nomer Telepon"
         android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/btnDaftar"
+    <TextView
+        android:id="@+id/txtAlert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp" />
+
+    <Button
+        android:id="@+id/btnDaftar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="5dp"
-        android:backgroundTint="#82CCDD"
+        android:background="@drawable/signupbtn"
         android:text="Daftar" />
-
-    <TextView
-        android:id="@+id/loginkuy"
-        android:layout_width="78dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="Login"
-        android:textColor="#FF5722" />
 
 </LinearLayout>

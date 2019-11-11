@@ -33,11 +33,12 @@ class Register : AppCompatActivity(){
                 isiData()
                 Toast.makeText(baseContext, "TERDAFTAR", Toast.LENGTH_LONG).show()
             }
-//            else if(edtPass.text.toString().equals(edtPassAgain.text.toString())) {
-//                Toast.makeText(baseContext, "Password Gak Konsisten", Toast.LENGTH_LONG).show()
-//            }
+            else if(!edtPass.text.toString().equals(edtPassAgain.text.toString())) {
+                txtAlert.text = "Pasword tidak sesuai"
+            }
             else{
-                Toast.makeText(baseContext, "EMAIL ATAU PASSWORD KOSONG", Toast.LENGTH_LONG).show()
+                txtAlert.text = "EMAIL ATAU PASSWORD KOSONG"
+                //Toast.makeText(baseContext, "EMAIL ATAU PASSWORD KOSONG", Toast.LENGTH_LONG).show()
             }
         }
     }

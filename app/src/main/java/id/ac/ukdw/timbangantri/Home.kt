@@ -2,6 +2,7 @@ package id.ac.ukdw.timbangantri
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -10,14 +11,28 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.activity_home.*
 
 class Home : AppCompatActivity() {
 
-
+//    private lateinit var database: FirebaseDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        val user = FirebaseAuth.getInstance().currentUser
+        user?.let {
+            val email = user.email
+            namaUser.text = email
+        }
+
+//        val akun = FirebaseDatabase.getInstance().getReference("user").child("nama_dpn")
+//        namaUser.text = akun.toString()
+
         imageView6.setOnClickListener {
             showBengkelTerdekat()
         }
@@ -33,7 +48,10 @@ class Home : AppCompatActivity() {
         imageView9.setOnClickListener {
             showSetting()
         }
+
     }
+
+    //Melempar activity lain pada tombol atau image
     fun showSetting(){
         var i: Intent = Intent(this, Setting::class.java)
 //        i.putExtra()

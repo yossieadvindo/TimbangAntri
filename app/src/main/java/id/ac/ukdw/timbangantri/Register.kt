@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.login.*
+import data.User
 import kotlinx.android.synthetic.main.sing_up.*
 
 class Register : AppCompatActivity(){
@@ -50,7 +50,13 @@ class Register : AppCompatActivity(){
         var nama_belk: TextView = findViewById(R.id.txtNamaBlkng)
         var no_telp: TextView = findViewById(R.id.txtNoTlp)
 
-        var user = User(email.text.toString(), pass.text.toString(), nama_dep.text.toString(), nama_belk.text.toString(), no_telp.text.toString())
+        var user = User(
+            email.text.toString(),
+            pass.text.toString(),
+            nama_dep.text.toString(),
+            nama_belk.text.toString(),
+            no_telp.text.toString()
+        )
         db.child(nama_dep.text.toString()).setValue(user)
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email.text.toString(), pass.text.toString())
     }

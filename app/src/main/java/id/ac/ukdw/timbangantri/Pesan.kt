@@ -3,8 +3,8 @@ package id.ac.ukdw.timbangantri
 //import android.support.v7.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -13,13 +13,35 @@ import kotlinx.android.synthetic.main.activity_booking.*
 
 class Pesan : AppCompatActivity() {
     lateinit var db: DatabaseReference
-
+    lateinit var jenMon: Spinner
+    lateinit  var jenisMotor: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booking)
 
         db = FirebaseDatabase.getInstance().getReference("booking")
 
+        jenMon = findViewById(R.id.spin_jenMotor)
+
+        val pilihan = arrayOf("Vario 125","Vario 110", "Beat", "Mio Gt" )
+
+        jenMon.adapter = ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,pilihan)
+
+        jenMon.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                txtKrgBk.text = "plis pilih"
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                jenisMotor = pilihan.get(position)
+            }
+
+        }
         btnPesan.setOnClickListener {
             if(!platno.text.toString().equals("") && !contact.text.toString().equals("") && !nama.text.toString().equals("")){
                 isiDataBooking()

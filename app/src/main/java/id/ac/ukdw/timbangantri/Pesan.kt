@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import data.Booking
@@ -39,8 +40,13 @@ class Pesan : AppCompatActivity() {
         var conct: TextView = findViewById(R.id.contact)
         var nama: TextView = findViewById(R.id.nama)
 
-        var booking =
-            Booking(no_plat.text.toString(), conct.text.toString(), nama.text.toString())
-        db.child(no_plat.text.toString()).setValue(booking)
+        var booking = Booking(no_plat.text.toString(), conct.text.toString(), nama.text.toString())
+
+        val users = FirebaseAuth.getInstance().currentUser
+        users?.let {
+            val emails = users.email
+            val uid = users.uid
+            db.child(uid).setValue(booking)
+        }
     }
 }

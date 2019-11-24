@@ -22,16 +22,18 @@ class Register : AppCompatActivity(){
 
         db = FirebaseDatabase.getInstance().getReference("user")
 
-        loginkuy.setOnClickListener {
-            val i: Intent = Intent(baseContext, MainActivity::class.java)
-            startActivity(i)
-        }
+//        loginkuy.setOnClickListener {
+//            val i: Intent = Intent(baseContext, MainActivity::class.java)
+//            startActivity(i)
+//        }
 
         btnDaftar.setOnClickListener {
             if(!edtEmail.text.toString().equals("") && !edtPass.text.toString().equals("") && !txtNamaDepan.text.toString().equals("") &&
                     !txtNamaBlkng.text.toString().equals("") && !txtNoTlp.text.toString().equals("")){
                 isiData()
                 Toast.makeText(baseContext, "TERDAFTAR", Toast.LENGTH_LONG).show()
+                val i = Intent(baseContext, MainActivity::class.java)
+                startActivity(i)
             }
             else if(!edtPass.text.toString().equals(edtPassAgain.text.toString())) {
                 txtAlert.text = "Pasword tidak sesuai"
@@ -57,8 +59,10 @@ class Register : AppCompatActivity(){
             nama_belk.text.toString(),
             no_telp.text.toString()
         )
+
         db.child(nama_dep.text.toString()).setValue(user)
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email.text.toString(), pass.text.toString())
+
     }
 }
 

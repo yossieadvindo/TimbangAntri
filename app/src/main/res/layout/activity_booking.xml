@@ -14,75 +14,87 @@
         android:layout_marginTop="150dp"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/platno"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:hint="nomor plat"
-            android:textColorHint="@android:color/darker_gray"
-            android:visibility="visible" />
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/contact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:hint="contact"
-            android:textColorHint="@android:color/darker_gray"
-            android:visibility="visible" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/nama"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:hint="nama"
-            android:textColorHint="@android:color/darker_gray"
-            android:visibility="visible" />
+                <EditText
+                    android:id="@+id/contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:ems="10"
+                    android:hint="contact"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:visibility="visible" />
 
-        <Spinner
-            android:id="@+id/spin_jenMotor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:padding="20dp"
-            android:spinnerMode="dialog" />
+                <EditText
+                    android:id="@+id/platno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:ems="10"
+                    android:hint="nomor plat"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:visibility="visible" />
 
-        <Button
-            android:id="@+id/btnPesan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="30dp"
-            android:background="@drawable/savebtn" />
+                <EditText
+                    android:id="@+id/nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:ems="10"
+                    android:hint="nama"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:visibility="visible" />
 
-        <TextView
-            android:id="@+id/txtKrgBk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:textAlignment="center"
-            android:textColor="#00E22929"
-            android:textStyle="italic" />
+                <Spinner
+                    android:id="@+id/spin_jenMotor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:padding="20dp"
+                    android:spinnerMode="dialog" />
+
+                <Button
+                    android:id="@+id/btnPesan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="30dp"
+                    android:background="@drawable/savebtn" />
+
+                <TextView
+                    android:id="@+id/txtKrgBk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:textAlignment="center"
+                    android:textColor="#00E22929"
+                    android:textStyle="italic" />
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
     <!--    <EditText-->

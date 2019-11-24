@@ -23,7 +23,7 @@ class Pesan : AppCompatActivity() {
 
         jenMon = findViewById(R.id.spin_jenMotor)
 
-        val pilihan = arrayOf("Vario 125","Vario 110", "Beat", "Mio Gt" )
+        val pilihan = arrayOf("Jenis Motor","Vario 125","Vario 110", "Beat", "Mio Gt" )
 
         jenMon.adapter = ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,pilihan)
 

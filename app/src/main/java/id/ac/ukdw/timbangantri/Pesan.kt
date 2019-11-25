@@ -24,7 +24,7 @@ class Pesan : AppCompatActivity() {
 
         jenMon = findViewById(R.id.spin_jenMotor)
 
-        val pilihan = arrayOf("Jenis Motor","Vario 125","Vario 110", "Beat", "Mio Gt" )
+        val pilihan = arrayOf("Type Kendaraan","Vario 125","Vario 110", "Beat", "Mio Gt", "Jupiter Mx" )
 
         jenMon.adapter = ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,pilihan)
 
@@ -44,19 +44,23 @@ class Pesan : AppCompatActivity() {
 
         }
         btnPesan.setOnClickListener {
-            if(!platno.text.toString().equals("") && !contact.text.toString().equals("") && !nama.text.toString().equals("")){
+           /* if(!platno.text.toString().equals("") && !contact.text.toString().equals("") && !nama.text.toString().equals("")){
                 isiDataBooking()
                 Toast.makeText(baseContext, "Kirim Pesanan", Toast.LENGTH_LONG).show()
             }
             else{
                 txtKrgBk.text = "Belum Diisi Semua"
                 //Toast.makeText(baseContext, "EMAIL ATAU PASSWORD KOSONG", Toast.LENGTH_LONG).show()
-            }
-            val i: Intent = Intent(baseContext, Home::class.java)
-            startActivity(i)
+            }*/
+            lanjut()
+           /* val i: Intent = Intent(baseContext, Home::class.java)
+            startActivity(i)*/
         }
     }
-
+    fun lanjut(){
+        val i: Intent = Intent(baseContext, Pesan2::class.java)
+        startActivity(i)
+    }
     fun isiDataBooking(){
         var no_plat: TextView = findViewById(R.id.platno)
         var conct: TextView = findViewById(R.id.contact)

@@ -10,14 +10,17 @@
     tools:context=".EditProfile">
 
     <EditText
-        android:id="@+id/edtemail2"
+        android:id="@+id/edtemailep"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="Email"/>
 
     <EditText
-        android:id="@+id/edtpassword2"
+        android:id="@+id/edtpasswordep"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +30,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/txtNamaDepan2"
+            android:id="@+id/txtNamaDepanep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -37,7 +40,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/txtNamaBlkng2"
+            android:id="@+id/txtNamaBlkngep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -48,7 +51,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/txtNoTlp2"
+        android:id="@+id/txtNoTlpep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -59,7 +62,7 @@
 
 
     <Button
-        android:id="@+id/btnsave2"
+        android:id="@+id/btnsaveep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SAVE" />

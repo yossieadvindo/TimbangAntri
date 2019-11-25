@@ -18,16 +18,17 @@ import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.activity_home.*
 
 class Home : AppCompatActivity() {
-
+    var uid :String = FirebaseAuth.getInstance().currentUser?.uid.toString()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val user = FirebaseAuth.getInstance().currentUser
-        user?.let {
-            val email = user.email
-            namaUser.text = email
-        }
+        val user = FirebaseAuth.getInstance().currentUser?.email
+
+//        user?.let {
+//            val email = user.email
+            namaUser.text = user
+//        }
 
         val out = FirebaseAuth.getInstance().signOut()
 
@@ -56,7 +57,7 @@ class Home : AppCompatActivity() {
     //Melempar activity lain pada tombol atau image
     fun showSetting(){
         var i: Intent = Intent(this, Setting::class.java)
-//        i.putExtra()
+        i.putExtra("id", uid)
         startActivity(i)
     }
     fun showListHarga(){

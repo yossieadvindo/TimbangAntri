@@ -13,6 +13,7 @@ import com.google.firebase.database.*
 import data.User
 import kotlinx.android.synthetic.main.activity_edit_profile.*
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.login.*
 
 class EditProfile : AppCompatActivity() {
 
@@ -20,50 +21,64 @@ class EditProfile : AppCompatActivity() {
 
     lateinit var edtEmail2: EditText
     lateinit var edtPassword2: EditText
+    lateinit var edtNamaDepan2: EditText
+    lateinit var edtNamaBelakang2: EditText
+    lateinit var edtNoHp2: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
+        var uid = intent.getStringExtra("id")
 
-        edtEmail2 = findViewById(R.id.edtemail2)
-        edtPassword2 = findViewById(R.id.edtpassword2)
+        var edtEmail2: TextView = findViewById(R.id.edtemailep)
+        var edtPassword2: TextView = findViewById(R.id.edtpasswordep)
+        var edtNamaDepan2: TextView = findViewById(R.id.txtNamaDepanep)
+        var edtNamaBelakang2: TextView = findViewById(R.id.txtNamaBlkngep)
+        var edtNoHp2: TextView = findViewById(R.id.txtNoTlpep)
 
-//        val uid = FirebaseAuth.getInstance().currentUser!!.uid
-//        db = FirebaseDatabase.getInstance().getReference("user/$uid")
-//        db.addValueEventListener(object : ValueEventListener{
-//            override fun onCancelled(dataSnapshot: DatabaseError) {
+        db = FirebaseDatabase.getInstance().getReference("user/$uid")
+        db.addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(dataSnapshot: DatabaseError) {
+
+            }
+
+            override fun onDataChange(data: DataSnapshot) {
+                var user = data.getValue(User::class.java)
+////                edtEmail2.setText(user!!.Email)
+                edtEmail2.text =  user!!.Email
+////                edtPassword2.setText(user!!.Password)
+                edtPassword2.text =  user!!.Password
+                //txtNamaDepan2.text = user!!.Email
+                edtNamaDepan2.text = user!!.nama_dpn
+                edtNamaBelakang2.text = user!!.nama_blkng
+                edtNoHp2.text = user!!.no_tlp
+            }
+
+        })
+
+
+
+//        val user = FirebaseAuth.getInstance().currentUser
+//        user?.let {
+//            val uid = user.uid
+//            db = FirebaseDatabase.getInstance().getReference("user").child(uid)
+//            db.addValueEventListener(object : ValueEventListener {
+//                override fun onCancelled(p0: DatabaseError) {
 //
-//            }
+//                }
 //
-//            override fun onDataChange(data: DataSnapshot) {
-//                var user = data.getValue(User::class.java)
-//                edtEmail2.setText(user!!.Email)
-//                edtpassword2.setText(user!!.Password)
-//            }
+//                override fun onDataChange(databaseSnapshot: DataSnapshot) {
+//                    edtEmail2.setText(databaseSnapshot.child("email").value!!.toString())
+//                    edtPassword2.setText(databaseSnapshot.child("password").value!!.toString())
 //
-//        })
-
-        val user = FirebaseAuth.getInstance().currentUser
-        user?.let {
-            val uid = user.uid
-            db = FirebaseDatabase.getInstance().getReference("user").child(uid)
-            db.addValueEventListener(object : ValueEventListener {
-                override fun onCancelled(p0: DatabaseError) {
-
-                }
-
-                override fun onDataChange(databaseSnapshot: DataSnapshot) {
-                    edtEmail2.setText(databaseSnapshot.child("email").value!!.toString())
-                    edtPassword2.setText(databaseSnapshot.child("password").value!!.toString())
-
-//                    var user = databaseSnapshot.getValue(User::class.java)
-//                    edtEmail2.text = user!!.Email as Editable
-//                    edtPassword2.text = user!!.Password as Editable
-
-                }
-
-            })
-        }
+////                    var user = databaseSnapshot.getValue(User::class.java)
+////                    edtEmail2.text = user!!.Email as Editable
+////                    edtPassword2.text = user!!.Password as Editable
+//
+//                }
+//
+//            })
+//        }
 
 
 

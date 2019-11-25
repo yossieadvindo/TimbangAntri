@@ -18,7 +18,7 @@ class Setting: AppCompatActivity() {
 
     fun showAkun(){
         var i: Intent = Intent(this, EditProfile::class.java)
-//        i.putExtra()
+        i.putExtra("id", intent.getStringExtra("id"))
         startActivity(i)
     }
 }

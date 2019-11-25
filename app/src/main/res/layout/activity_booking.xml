@@ -8,6 +8,12 @@
     android:orientation="vertical"
     tools:context=".Pesan">
 
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="78dp"
+        android:layout_height="35dp"
+        app:srcCompat="@drawable/left" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,6 +30,19 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:ems="10"
+                    android:hint="nama"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:visibility="visible" />
+
+                <EditText
                     android:id="@+id/contact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -35,6 +54,17 @@
                     android:hint="contact"
                     android:textColorHint="@android:color/darker_gray"
                     android:visibility="visible" />
+
+                <Spinner
+                    android:id="@+id/spin_jenMotor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:padding="20dp"
+                    android:spinnerMode="dialog" />
 
                 <EditText
                     android:id="@+id/platno"
@@ -50,7 +80,7 @@
                     android:visibility="visible" />
 
                 <EditText
-                    android:id="@+id/nama"
+                    android:id="@+id/jarakTempuh"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -58,28 +88,8 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="5dp"
                     android:ems="10"
-                    android:hint="nama"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:visibility="visible" />
-
-                <Spinner
-                    android:id="@+id/spin_jenMotor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="5dp"
-                    android:padding="20dp"
-                    android:spinnerMode="dialog" />
-
-                <Button
-                    android:id="@+id/btnPesan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="30dp"
-                    android:background="@drawable/savebtn" />
+                    android:hint="Jarak Tempuh"
+                    android:inputType="textPersonName" />
 
                 <TextView
                     android:id="@+id/txtKrgBk"
@@ -92,6 +102,15 @@
                     android:textAlignment="center"
                     android:textColor="#00E22929"
                     android:textStyle="italic" />
+
+                <Button
+                    android:id="@+id/btnPesan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_margin="30dp"
+                    android:text="Lanjut" />
+
             </LinearLayout>
         </ScrollView>
 

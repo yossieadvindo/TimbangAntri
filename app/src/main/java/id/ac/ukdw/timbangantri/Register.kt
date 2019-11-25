@@ -66,8 +66,6 @@ class Register : AppCompatActivity(){
                 db.child(uid).setValue(user)
             }
 
-
-
     }
 }
 

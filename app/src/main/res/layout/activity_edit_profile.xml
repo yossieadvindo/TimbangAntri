@@ -12,18 +12,12 @@
     <EditText
         android:id="@+id/edtemail2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="email" />
+        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/edtpassword2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="password" />
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="match_parent"

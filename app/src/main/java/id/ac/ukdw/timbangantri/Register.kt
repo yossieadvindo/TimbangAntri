@@ -60,8 +60,12 @@ class Register : AppCompatActivity(){
             no_telp.text.toString()
         )
 
-        db.child(nama_dep.text.toString()).setValue(user)
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email.text.toString(), pass.text.toString())
+            .addOnSuccessListener {
+                val uid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
+                db.child(uid).setValue(user)
+            }
+
 
 
     }

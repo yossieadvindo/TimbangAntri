@@ -29,6 +29,8 @@ class Home : AppCompatActivity() {
             namaUser.text = email
         }
 
+        val out = FirebaseAuth.getInstance().signOut()
+
 //        val akun = FirebaseDatabase.getInstance().getReference("user").child("nama_dpn")
 //        namaUser.text = akun.toString()
 
@@ -37,6 +39,7 @@ class Home : AppCompatActivity() {
         }
         imageView10.setOnClickListener {
             showHomeActivity()
+            out
         }
         imageView3.setOnClickListener {
             showBooking()

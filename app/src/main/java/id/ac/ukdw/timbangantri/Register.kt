@@ -63,6 +63,7 @@ class Register : AppCompatActivity(){
         db.child(nama_dep.text.toString()).setValue(user)
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email.text.toString(), pass.text.toString())
 
+
     }
 }
 

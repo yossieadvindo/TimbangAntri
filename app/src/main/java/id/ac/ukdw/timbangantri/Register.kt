@@ -62,7 +62,7 @@ class Register : AppCompatActivity(){
 
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email.text.toString(), pass.text.toString())
             .addOnSuccessListener {
-                val uid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
+                val uid = FirebaseAuth.getInstance().currentUser!!.uid
                 db.child(uid).setValue(user)
             }
 

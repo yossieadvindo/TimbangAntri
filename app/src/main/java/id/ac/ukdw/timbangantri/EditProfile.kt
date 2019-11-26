@@ -19,12 +19,6 @@ class EditProfile : AppCompatActivity() {
 
     lateinit var db: DatabaseReference
 
-    lateinit var edtEmail2: EditText
-    lateinit var edtPassword2: EditText
-    lateinit var edtNamaDepan2: EditText
-    lateinit var edtNamaBelakang2: EditText
-    lateinit var edtNoHp2: EditText
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
@@ -44,19 +38,14 @@ class EditProfile : AppCompatActivity() {
 
             override fun onDataChange(data: DataSnapshot) {
                 var user = data.getValue(User::class.java)
-////                edtEmail2.setText(user!!.Email)
                 edtEmail2.text =  user!!.Email
-////                edtPassword2.setText(user!!.Password)
                 edtPassword2.text =  user!!.Password
-                //txtNamaDepan2.text = user!!.Email
                 edtNamaDepan2.text = user!!.nama_dpn
                 edtNamaBelakang2.text = user!!.nama_blkng
                 edtNoHp2.text = user!!.no_tlp
             }
 
         })
-
-
 
 //        val user = FirebaseAuth.getInstance().currentUser
 //        user?.let {
@@ -80,8 +69,41 @@ class EditProfile : AppCompatActivity() {
 //            })
 //        }
 
+        btnsaveep.setOnClickListener {
+            if(!edtEmail2.text.toString().equals("") && !edtPassword2.text.toString().equals("") && !edtNamaDepan2.text.toString().equals("") &&
+                !edtNamaBelakang2.text.toString().equals("") && !edtNoHp2.text.toString().equals("")){
 
+                var user = User(
+                    edtEmail2.text.toString(),
+                    edtPassword2.text.toString(),
+                    edtNamaDepan2.text.toString(),
+                    edtNamaBelakang2.text.toString(),
+                    edtNoHp2.text.toString()
+                )
 
+                db.child(uid).setValue(user)
+
+                Toast.makeText(baseContext, "TERGANTI", Toast.LENGTH_LONG).show()
+            }
+        }
     }
+
+//    fun gantidong() {
+//        var emailEP: TextView = findViewById(R.id.edtemailep)
+//        var passEP: TextView = findViewById(R.id.edtpasswordep)
+//        var nama_depEP: TextView = findViewById(R.id.txtNamaDepanep)
+//        var nama_belkEP: TextView = findViewById(R.id.txtNamaBlkngep)
+//        var no_telpEP: TextView = findViewById(R.id.txtNoTlpep)
+//
+//        var user = User(
+//            emailEP.text.toString(),
+//            passEP.text.toString(),
+//            nama_depEP.text.toString(),
+//            nama_belkEP.text.toString(),
+//            no_telpEP.text.toString()
+//        )
+//
+//        db.child(uid).setValue(user)
+//    }
 }
 

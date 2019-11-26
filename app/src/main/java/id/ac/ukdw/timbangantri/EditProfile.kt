@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.login.*
 class EditProfile : AppCompatActivity() {
 
     lateinit var db: DatabaseReference
+
     var edtEmail2: TextView = findViewById(R.id.edtemailep)
     var edtPassword2: TextView = findViewById(R.id.edtpasswordep)
     var edtNamaDepan2: TextView = findViewById(R.id.txtNamaDepanep)
@@ -80,7 +81,7 @@ class EditProfile : AppCompatActivity() {
                     edtNoHp2.text.toString()
                 )
 
-                db.child(uid).setValue(user)
+                db.setValue(user)
 
                 Toast.makeText(baseContext, "TERGANTI", Toast.LENGTH_LONG).show()
             }
@@ -104,5 +105,6 @@ class EditProfile : AppCompatActivity() {
 //
 //        db.child(uid).setValue(user)
 //    }
+
 }
 

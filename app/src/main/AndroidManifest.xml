@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditProfile"></activity>
+        <activity android:name=".Riwayat"></activity>
+        <activity android:name=".EditProfile" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -32,7 +33,7 @@
         <activity android:name=".BengkelTerdekat" />
         <activity android:name=".Pricelist" />
         <activity android:name=".Setting" />
-        <activity android:name=".Pesan2"/>
+        <activity android:name=".Pesan2" />
     </application>
 
 </manifest>

@@ -51,6 +51,9 @@ class Home : AppCompatActivity() {
         imageView9.setOnClickListener {
             showSetting()
         }
+        imgRiwayat.setOnClickListener {
+            showRiwayat()
+        }
 
     }
 
@@ -67,7 +70,7 @@ class Home : AppCompatActivity() {
     }
     fun showBooking(){
         var i: Intent = Intent(this, Pesan::class.java)
-//        i.putExtra()
+        i.putExtra("id", uid)
         startActivity(i)
     }
     fun showBengkelTerdekat() {
@@ -79,6 +82,12 @@ class Home : AppCompatActivity() {
     fun showHomeActivity() {
         var i: Intent = Intent(this, MainActivity::class.java)
 //        i.putExtra()
+        startActivity(i)
+    }
+
+    fun showRiwayat(){
+        var i: Intent = Intent(this, Riwayat::class.java)
+        i.putExtra("id", uid)
         startActivity(i)
     }
 

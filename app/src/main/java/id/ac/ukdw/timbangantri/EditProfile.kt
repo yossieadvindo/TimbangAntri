@@ -18,24 +18,16 @@ import kotlinx.android.synthetic.main.login.*
 class EditProfile : AppCompatActivity() {
 
     lateinit var db: DatabaseReference
-
-    lateinit var edtEmail2: EditText
-    lateinit var edtPassword2: EditText
-    lateinit var edtNamaDepan2: EditText
-    lateinit var edtNamaBelakang2: EditText
-    lateinit var edtNoHp2: EditText
+    var edtEmail2: TextView = findViewById(R.id.edtemailep)
+    var edtPassword2: TextView = findViewById(R.id.edtpasswordep)
+    var edtNamaDepan2: TextView = findViewById(R.id.txtNamaDepanep)
+    var edtNamaBelakang2: TextView = findViewById(R.id.txtNamaBlkngep)
+    var edtNoHp2: TextView = findViewById(R.id.txtNoTlpep)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
         var uid = intent.getStringExtra("id")
-
-        var edtEmail2: TextView = findViewById(R.id.edtemailep)
-        var edtPassword2: TextView = findViewById(R.id.edtpasswordep)
-        var edtNamaDepan2: TextView = findViewById(R.id.txtNamaDepanep)
-        var edtNamaBelakang2: TextView = findViewById(R.id.txtNamaBlkngep)
-        var edtNoHp2: TextView = findViewById(R.id.txtNoTlpep)
-
         db = FirebaseDatabase.getInstance().getReference("user/$uid")
         db.addValueEventListener(object : ValueEventListener{
             override fun onCancelled(dataSnapshot: DatabaseError) {
@@ -52,6 +44,7 @@ class EditProfile : AppCompatActivity() {
                 edtNamaDepan2.text = user!!.nama_dpn
                 edtNamaBelakang2.text = user!!.nama_blkng
                 edtNoHp2.text = user!!.no_tlp
+
             }
 
         })
@@ -81,7 +74,15 @@ class EditProfile : AppCompatActivity() {
 //        }
 
 
-
+        fun updateprofil(){
+            var user = User(
+                edtEmail2.toString(),
+                edtPassword2.toString(),
+                edtNamaDepan2.toString(),
+                edtNamaBelakang2.toString(),
+                edtNoHp2.toString()
+            )
+        }
     }
 }
 

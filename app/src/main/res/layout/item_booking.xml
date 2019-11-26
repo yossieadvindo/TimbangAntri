@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:padding="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/no_platrcy"
+    <RelativeLayout
+        android:id="@+id/relativeList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="24sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/namarcy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/no_platrcy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/contactrcy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textStyle="italic" />
+        <TextView
+            android:id="@+id/namarcy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="TextView"
+            android:textStyle="bold" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/contactrcy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="TextView"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

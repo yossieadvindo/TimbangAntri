@@ -69,7 +69,7 @@ class Home : AppCompatActivity() {
         startActivity(i)
     }
     fun showBooking(){
-        var i: Intent = Intent(this, Pesan::class.java)
+        var i: Intent = Intent(this, placeActivity::class.java)
         i.putExtra("id", uid)
         startActivity(i)
     }

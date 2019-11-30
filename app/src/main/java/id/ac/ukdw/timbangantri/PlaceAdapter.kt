@@ -26,7 +26,10 @@ class PlaceAdapter(var list : ArrayList<Place>, val context: Context) : Recycler
         holder.txtNamaBengkel?.text = bengkel.nama_bengkel
         holder.txtJdwlv?.text = bengkel.jam_buka + " - " + bengkel.jam_tutup
         holder.clickRelative?.setOnClickListener {
-            var i : Intent = Intent(context, placeActivity::class.java)
+            var i : Intent = Intent(context, PlaceDetailActivity::class.java)
+            i.putExtra("namaBengkel", bengkel.nama_bengkel)
+            i.putExtra("jambuka", bengkel.jam_buka)
+            i.putExtra("jamtutup", bengkel.jam_tutup)
             context.startActivity(i)
         }
     }

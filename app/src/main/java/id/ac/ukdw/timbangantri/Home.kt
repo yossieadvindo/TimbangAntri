@@ -51,6 +51,9 @@ class Home : AppCompatActivity() {
         imageView9.setOnClickListener {
             showSetting()
         }
+        imageView5.setOnClickListener{
+            showRiwayatActivity()
+        }
 
     }
 
@@ -80,6 +83,11 @@ class Home : AppCompatActivity() {
         var i: Intent = Intent(this, MainActivity::class.java)
 //        i.putExtra()
         startActivity(i)
+    }
+
+    fun showRiwayatActivity(){
+        var r: Intent = Intent(this, TampilRiwayat::class.java)
+        startActivity(r)
     }
 
 }

@@ -33,6 +33,7 @@
         <activity android:name=".Pricelist" />
         <activity android:name=".Setting" />
         <activity android:name=".Pesan2"/>
+        <activity android:name=".TampilRiwayat"/>
     </application>
 
 </manifest>

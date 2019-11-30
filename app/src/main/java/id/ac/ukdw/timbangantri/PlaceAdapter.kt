@@ -9,9 +9,11 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import data.Place
 
-class PlaceAdapter(var list : ArrayList<Place>, val context: Context) : RecyclerView.Adapter<PlaceAdapter.PlaceHolder>() {
+class PlaceAdapter(var list : ArrayList<Place>, val context: Context, var uid:String) : RecyclerView.Adapter<PlaceAdapter.PlaceHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceAdapter.PlaceHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.place_adapter, parent, false)
         return PlaceHolder(view)
@@ -27,6 +29,7 @@ class PlaceAdapter(var list : ArrayList<Place>, val context: Context) : Recycler
         holder.txtJdwlv?.text = bengkel.jam_buka + " - " + bengkel.jam_tutup
         holder.clickRelative?.setOnClickListener {
             var i : Intent = Intent(context, PlaceDetailActivity::class.java)
+            i.putExtra("id", uid)
             i.putExtra("namaBengkel", bengkel.nama_bengkel)
             i.putExtra("jambuka", bengkel.jam_buka)
             i.putExtra("jamtutup", bengkel.jam_tutup)

@@ -14,8 +14,9 @@ import java.util.Locale.filter
 
 class placeActivity : AppCompatActivity() {
     lateinit var db: DatabaseReference
+    var uid = intent.getStringExtra("id")
     var list: ArrayList<Place> = ArrayList<Place>()
-    val placeAdapter = PlaceAdapter(list,this)
+    val placeAdapter = PlaceAdapter(list,this, uid)
     val layoutManager = LinearLayoutManager(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,16 +44,13 @@ class placeActivity : AppCompatActivity() {
         db.addValueEventListener(listener)
         txtSearcuBengkel.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
             }
-
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 filter(s.toString());
             }
 
             override fun afterTextChanged(s: Editable?) {
-
             }
 
         })

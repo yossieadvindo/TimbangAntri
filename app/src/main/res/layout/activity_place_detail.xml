@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".PlaceDetailActivity">
 
     <TextView
@@ -54,6 +53,20 @@
                     android:layout_margin="5dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/sampai"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="sampai"
                     android:textSize="12sp"
                     android:textStyle="italic" />
 
@@ -64,6 +77,7 @@
                     android:layout_margin="5dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:gravity="center"
                     android:textSize="12sp"
                     android:textStyle="italic" />
             </LinearLayout>
@@ -100,6 +114,8 @@
         android:id="@+id/no_platdetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="no_plat"
@@ -107,7 +123,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
@@ -132,5 +148,14 @@
             android:text="15.00 WIB" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnsaveAntrian"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:text="Button" />
 
 </LinearLayout>

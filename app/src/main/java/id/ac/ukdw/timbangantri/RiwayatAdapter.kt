@@ -41,11 +41,11 @@ class RiwayatAdapter(val list : ArrayList<Antrian>, val context: Context) : Recy
 
         init{
             Bgkl = view.findViewById(R.id.itm_toko) as TextView
-            No_plat = view.findViewById(R.id.no_platitm)  as TextView
-            Nama = view.findViewById(R.id.namaitm)  as TextView
-            Contact = view.findViewById(R.id.contactitm)  as TextView
-            Tgl = view.findViewById(R.id.tglitm)  as TextView
-            Waktu = view.findViewById(R.id.jamitm)  as TextView
+            No_plat = view.findViewById(R.id.no_platitm) as TextView
+            Nama = view.findViewById(R.id.namaitm) as TextView
+            Contact = view.findViewById(R.id.contactitm) as TextView
+            Tgl = view.findViewById(R.id.tglitm) as TextView
+            Waktu = view.findViewById(R.id.jamitm) as TextView
         }
     }
 }

@@ -11,6 +11,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import data.Booking
 import kotlinx.android.synthetic.main.activity_booking.*
+import java.util.*
 
 class Pesan : AppCompatActivity() {
     lateinit var db: DatabaseReference
@@ -44,17 +45,19 @@ class Pesan : AppCompatActivity() {
 
         }
         btnPesan.setOnClickListener {
-           /* if(!platno.text.toString().equals("") && !contact.text.toString().equals("") && !nama.text.toString().equals("")){
+            if(!platno.text.toString().equals("") && !contact.text.toString().equals("") && !nama.text.toString().equals("")){
                 isiDataBooking()
                 Toast.makeText(baseContext, "Kirim Pesanan", Toast.LENGTH_LONG).show()
             }
             else{
                 txtKrgBk.text = "Belum Diisi Semua"
                 //Toast.makeText(baseContext, "EMAIL ATAU PASSWORD KOSONG", Toast.LENGTH_LONG).show()
-            }*/
-            lanjut()
+            }
+
            /* val i: Intent = Intent(baseContext, Home::class.java)
             startActivity(i)*/
+
+//            lanjut()
         }
     }
     fun lanjut(){
@@ -62,17 +65,17 @@ class Pesan : AppCompatActivity() {
         startActivity(i)
     }
     fun isiDataBooking(){
+
+        var uid = intent.getStringExtra("id")
+
         var no_plat: TextView = findViewById(R.id.platno)
         var conct: TextView = findViewById(R.id.contact)
         var nama: TextView = findViewById(R.id.nama)
+        var id: String? = UUID.randomUUID().toString()
 
-        var booking = Booking(no_plat.text.toString(), conct.text.toString(), nama.text.toString())
+        var booking = Booking(no_plat.text.toString(), conct.text.toString(), nama.text.toString(), uid)
 
-        val users = FirebaseAuth.getInstance().currentUser
-        users?.let {
-            val emails = users.email
-            val uid = users.uid
-            db.child(uid).setValue(booking)
-        }
+        db.child(id!!).setValue(booking)
+
     }
 }

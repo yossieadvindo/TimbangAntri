@@ -14,6 +14,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
+import data.Booking
 import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -30,7 +31,7 @@ class Home : AppCompatActivity() {
             namaUser.text = user
 //        }
 
-        val out = FirebaseAuth.getInstance().signOut()
+
 
 //        val akun = FirebaseDatabase.getInstance().getReference("user").child("nama_dpn")
 //        namaUser.text = akun.toString()
@@ -40,7 +41,7 @@ class Home : AppCompatActivity() {
         }
         imageView10.setOnClickListener {
             showHomeActivity()
-            out
+            val out = FirebaseAuth.getInstance().signOut()
         }
         imageView3.setOnClickListener {
             showBooking()
@@ -51,8 +52,9 @@ class Home : AppCompatActivity() {
         imageView9.setOnClickListener {
             showSetting()
         }
-        imageView5.setOnClickListener{
-            showRiwayatActivity()
+
+        imgRiwayat.setOnClickListener {
+            showRiwayat()
         }
 
     }
@@ -69,8 +71,8 @@ class Home : AppCompatActivity() {
         startActivity(i)
     }
     fun showBooking(){
-        var i: Intent = Intent(this, Pesan::class.java)
-//        i.putExtra()
+        var i: Intent = Intent(this, placeActivity::class.java)
+        i.putExtra("id", uid)
         startActivity(i)
     }
     fun showBengkelTerdekat() {
@@ -85,9 +87,12 @@ class Home : AppCompatActivity() {
         startActivity(i)
     }
 
-    fun showRiwayatActivity(){
-        var r: Intent = Intent(this, TampilRiwayat::class.java)
-        startActivity(r)
+
+    fun showRiwayat(){
+        var i: Intent = Intent(this, Riwayat::class.java)
+        i.putExtra("id", uid)
+        startActivity(i)
+
     }
 
 }

@@ -3,14 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/editprofil">
 
-
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Daftar Bengkel"
+        android:textColor="#92B1FB"
+        android:textSize="24sp"
+        android:paddingTop="20dp"
+        android:textStyle="bold" />
     <EditText
         android:id="@+id/txtSearcuBengkel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        android:hint="Cari nama bengkel"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcyPlace"

@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/editprofil"
     tools:context=".PlaceDetailActivity">
 
     <TextView
@@ -13,7 +14,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Booking Antrian"
+        android:textColor="#92B1FB"
         android:textSize="24sp"
+        android:paddingTop="20dp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -36,6 +39,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:paddingStart="29dp"
+                android:text="hello"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:textSize="30sp"
@@ -55,7 +60,9 @@
                     android:layout_marginRight="20dp"
                     android:gravity="center"
                     android:textSize="12sp"
-                    android:textStyle="italic" />
+                    android:text="10 : 00"
+                    android:textStyle="italic"
+                    android:textColor="#0c9463"/>
 
                 <TextView
                     android:id="@+id/sampai"
@@ -79,7 +86,8 @@
                     android:layout_marginRight="20dp"
                     android:gravity="center"
                     android:textSize="12sp"
-                    android:textStyle="italic" />
+                    android:textStyle="italic"
+                    android:textColor="#0c9463"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -121,41 +129,12 @@
         android:hint="no_plat"
         android:inputType="textPersonName" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:text="10.00 WIB" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:text="13.00 WIB" />
-
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="15.00 WIB" />
-
-    </LinearLayout>
-
     <Button
         android:id="@+id/btnsaveAntrian"
-        android:layout_width="148dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:layout_weight="1"
-        android:text="Button" />
+        android:background="#d6e5fa"
+        android:text="pesan" />
 
 </LinearLayout>

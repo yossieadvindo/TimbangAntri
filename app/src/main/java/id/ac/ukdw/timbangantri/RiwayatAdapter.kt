@@ -20,6 +20,7 @@ class RiwayatAdapter(val list : ArrayList<Antrian>, val context: Context) : Recy
         return list.size
     }
 
+
     override fun onBindViewHolder(holder: RiwayatAdapter.RiwayatHolder, position: Int) {
         val doc = list.get(position)
         holder.Bgkl?.text = doc.bengkel

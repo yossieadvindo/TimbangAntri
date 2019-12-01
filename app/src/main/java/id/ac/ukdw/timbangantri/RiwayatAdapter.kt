@@ -1,16 +1,16 @@
 package id.ac.ukdw.timbangantri
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import data.Antrian
 import data.Booking
 
-class RiwayatAdapter(val list : ArrayList<Booking>, val context: Context) : RecyclerView.Adapter<RiwayatAdapter.RiwayatHolder>() {
+class RiwayatAdapter(val list : ArrayList<Antrian>, val context: Context) : RecyclerView.Adapter<RiwayatAdapter.RiwayatHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RiwayatAdapter.RiwayatHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_booking, parent, false)
         return RiwayatHolder(view)
@@ -22,21 +22,30 @@ class RiwayatAdapter(val list : ArrayList<Booking>, val context: Context) : Recy
 
     override fun onBindViewHolder(holder: RiwayatAdapter.RiwayatHolder, position: Int) {
         val doc = list.get(position)
-        holder.No_Plat?.text = doc.no_plat
-        holder.Namarcy?.text = doc.nama
-        holder.Contactrcy?.text = doc.contact
-        holder.No_Plat?.setOnClickListener { Toast.makeText(context, doc.no_plat, Toast.LENGTH_LONG).show() }
+        holder.Bgkl?.text = doc.bengkel
+        holder.No_plat?.text = doc.no_plat
+        holder.Nama?.text = doc.nama
+        holder.Contact?.text = doc.contact
+        holder.Tgl?.text = doc.tgl
+        holder.Waktu?.text = doc.jam
+        holder.No_plat?.setOnClickListener { Toast.makeText(context, doc.no_plat, Toast.LENGTH_LONG).show() }
     }
 
     class RiwayatHolder(val view: View): RecyclerView.ViewHolder(view){
-        var No_Plat : TextView? = null
-        var Namarcy : TextView? = null
-        var Contactrcy : TextView? = null
+        var Bgkl : TextView? = null
+        var No_plat : TextView? = null
+        var Nama : TextView? = null
+        var Contact : TextView? = null
+        var Tgl : TextView? = null
+        var Waktu : TextView? = null
 
         init{
-            No_Plat = view.findViewById(R.id.no_platrcy) as TextView
-            Namarcy = view.findViewById(R.id.namarcy)  as TextView
-            Contactrcy = view.findViewById(R.id.contactrcy)  as TextView
+            Bgkl = view.findViewById(R.id.itm_toko) as TextView
+            No_plat = view.findViewById(R.id.no_platitm)  as TextView
+            Nama = view.findViewById(R.id.namaitm)  as TextView
+            Contact = view.findViewById(R.id.contactitm)  as TextView
+            Tgl = view.findViewById(R.id.tglitm)  as TextView
+            Waktu = view.findViewById(R.id.jamitm)  as TextView
         }
     }
 }

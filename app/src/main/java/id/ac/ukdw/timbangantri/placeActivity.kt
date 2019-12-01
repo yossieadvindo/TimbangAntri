@@ -6,6 +6,7 @@ import android.text.TextWatcher
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import data.Place
 import kotlinx.android.synthetic.main.place.*
@@ -14,7 +15,7 @@ import java.util.Locale.filter
 
 class placeActivity : AppCompatActivity() {
     lateinit var db: DatabaseReference
-    var uid = intent.getStringExtra("id")
+    var uid = FirebaseAuth.getInstance().currentUser?.uid.toString()
     var list: ArrayList<Place> = ArrayList<Place>()
     val placeAdapter = PlaceAdapter(list,this, uid)
     val layoutManager = LinearLayoutManager(this)

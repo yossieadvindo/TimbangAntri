@@ -19,20 +19,20 @@ class EditProfile : AppCompatActivity() {
 
     lateinit var db: DatabaseReference
 
-    var edtEmail2: TextView = findViewById(R.id.edtemailep)
-    var edtPassword2: TextView = findViewById(R.id.edtpasswordep)
-    var edtNamaDepan2: TextView = findViewById(R.id.txtNamaDepanep)
-    var edtNamaBelakang2: TextView = findViewById(R.id.txtNamaBlkngep)
-    var edtNoHp2: TextView = findViewById(R.id.txtNoTlpep)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
         var uid = intent.getStringExtra("id")
         db = FirebaseDatabase.getInstance().getReference("user/$uid")
+
+        var edtEmail2: TextView = findViewById(R.id.edtemailep)
+        var edtPassword2: TextView = findViewById(R.id.edtpasswordep)
+        var edtNamaDepan2: TextView = findViewById(R.id.txtNamaDepanep)
+        var edtNamaBelakang2: TextView = findViewById(R.id.txtNamaBlkngep)
+        var edtNoHp2: TextView = findViewById(R.id.txtNoTlpep)
+
         db.addValueEventListener(object : ValueEventListener{
             override fun onCancelled(dataSnapshot: DatabaseError) {
-
             }
 
             override fun onDataChange(data: DataSnapshot) {
@@ -47,28 +47,6 @@ class EditProfile : AppCompatActivity() {
 
         })
 
-//        val user = FirebaseAuth.getInstance().currentUser
-//        user?.let {
-//            val uid = user.uid
-//            db = FirebaseDatabase.getInstance().getReference("user").child(uid)
-//            db.addValueEventListener(object : ValueEventListener {
-//                override fun onCancelled(p0: DatabaseError) {
-//
-//                }
-//
-//                override fun onDataChange(databaseSnapshot: DataSnapshot) {
-//                    edtEmail2.setText(databaseSnapshot.child("email").value!!.toString())
-//                    edtPassword2.setText(databaseSnapshot.child("password").value!!.toString())
-//
-////                    var user = databaseSnapshot.getValue(User::class.java)
-////                    edtEmail2.text = user!!.Email as Editable
-////                    edtPassword2.text = user!!.Password as Editable
-//
-//                }
-//
-//            })
-//        }
-
         btnsaveep.setOnClickListener {
             if(!edtEmail2.text.toString().equals("") && !edtPassword2.text.toString().equals("") && !edtNamaDepan2.text.toString().equals("") &&
                 !edtNamaBelakang2.text.toString().equals("") && !edtNoHp2.text.toString().equals("")){
@@ -81,30 +59,14 @@ class EditProfile : AppCompatActivity() {
                     edtNoHp2.text.toString()
                 )
 
+                FirebaseAuth.getInstance().currentUser!!.updateEmail(edtEmail2.text.toString())
+                FirebaseAuth.getInstance().currentUser!!.updatePassword(edtPassword2.text.toString())
                 db.setValue(user)
-
                 Toast.makeText(baseContext, "TERGANTI", Toast.LENGTH_LONG).show()
             }
         }
     }
 
-//    fun gantidong() {
-//        var emailEP: TextView = findViewById(R.id.edtemailep)
-//        var passEP: TextView = findViewById(R.id.edtpasswordep)
-//        var nama_depEP: TextView = findViewById(R.id.txtNamaDepanep)
-//        var nama_belkEP: TextView = findViewById(R.id.txtNamaBlkngep)
-//        var no_telpEP: TextView = findViewById(R.id.txtNoTlpep)
-//
-//        var user = User(
-//            emailEP.text.toString(),
-//            passEP.text.toString(),
-//            nama_depEP.text.toString(),
-//            nama_belkEP.text.toString(),
-//            no_telpEP.text.toString()
-//        )
-//
-//        db.child(uid).setValue(user)
-//    }
 
 }
 

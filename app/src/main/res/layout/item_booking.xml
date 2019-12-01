@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:orientation="vertical"
-    android:padding="5dp"
+    <androidx.cardview.widget.CardView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:padding="5dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
@@ -17,7 +17,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginStart="10dp"
+            android:textColor="#a3f7bf"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/no_platitm"
@@ -75,5 +78,4 @@
             android:textStyle="bold" />
 
     </RelativeLayout>
-
 </androidx.cardview.widget.CardView>

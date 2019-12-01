@@ -56,7 +56,6 @@ class placeActivity : AppCompatActivity() {
 
         })
 
-
     }
 
     fun filter(search: String){

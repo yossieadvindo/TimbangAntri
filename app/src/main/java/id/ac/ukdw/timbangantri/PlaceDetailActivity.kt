@@ -1,5 +1,6 @@
 package id.ac.ukdw.timbangantri
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -51,6 +52,17 @@ class PlaceDetailActivity : AppCompatActivity() {
                 db.child(idantr!!).setValue(antrian)
 
                 Toast.makeText(baseContext, "Kirim Antrian", Toast.LENGTH_LONG).show()
+
+                var i: Intent = Intent(this, Code::class.java)
+                i.putExtra("id", uid)
+                i.putExtra("bgklantr", namabgkl)
+                i.putExtra("namaantr", namaantr.text.toString())
+                i.putExtra("contactantr", contactantr.text.toString())
+                i.putExtra("noplatantr" ,no_platantr.text.toString())
+                i.putExtra("tglantr", tgl)
+                i.putExtra("jamantr", jam)
+                startActivity(i)
+
             }
             else{
                 txtKrgBk.text = "Belum Diisi Semua Antrian"

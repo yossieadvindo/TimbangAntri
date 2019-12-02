@@ -40,11 +40,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:paddingStart="29dp"
-                android:text="hello"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:textSize="30sp"
+                android:paddingStart="29dp"
+                android:text="hello"
+                android:textSize="24sp"
                 android:textStyle="normal" />
 
             <LinearLayout

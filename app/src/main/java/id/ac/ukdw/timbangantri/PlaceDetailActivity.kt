@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -45,23 +46,68 @@ class PlaceDetailActivity : AppCompatActivity() {
                 var no_platantr: TextView = findViewById(R.id.no_platdetail)
                 var tgl = DateFormat.getDateInstance(DateFormat.FULL).format(cal.time)
                 var jam = DateFormat.getTimeInstance(TimeZone.SHORT).format(cal.time)
+                var service:String = ""
                 var idantr: String? = UUID.randomUUID().toString()
 
-                var antrian = Antrian(namabgkl, namaantr.text.toString(), contactantr.text.toString(), no_platantr.text.toString(), tgl, jam, uid)
+                    val builder = AlertDialog.Builder(this@PlaceDetailActivity)
 
-                db.child(idantr!!).setValue(antrian)
+                    // String array for alert dialog multi choice items
+                    val bengkelArray = arrayOf(
+                        "Ganti_Ban", "Ganti_Lampu", "Ganti_Oli", "Ganti_Ban", "Ganti_Accu", "Ganti_Ecu", "Ganti_Coil", "Ganti_Busi",
+                        "Ganti_Vanbelt", "Ganti_Cover_Fan", "Ganti_Filter")
+                    // Boolean array for initial selected items
+                    val checkedColorsArray = booleanArrayOf(
+                        false, false, false, false, false, false, false, false, false, false, false
+                    )
+                    // Convert the color array to list
+                    val colorsList = Arrays.asList(*bengkelArray)
+                    //setTitle
+                    builder.setTitle("Select colors")
+                    //set multichoice
+                    builder.setMultiChoiceItems(bengkelArray, checkedColorsArray) { dialog, which, isChecked ->
+                        // Update the current focused item's checked status
+                        checkedColorsArray[which] = isChecked
+                        // Get the current focused item
+                        val currentItem = colorsList[which]
+                        // Notify the current action
+                        Toast.makeText(applicationContext, currentItem + " " + isChecked, Toast.LENGTH_SHORT).show()
+                    }
+
+                    // Set the positive/yes button click listener
+                    builder.setPositiveButton("OK") { dialog, which ->
+                        // Do something when click positive button
+                        for (i in checkedColorsArray.indices) {
+                            val checked = checkedColorsArray[i]
+                            if (checked) {
+                                service = service.toString() + colorsList[i] + " "
+                            }
+                        }
+
+                        var antrian = Antrian(namabgkl, namaantr.text.toString(), contactantr.text.toString(), no_platantr.text.toString(), tgl, jam, service, uid)
+
+                        db.child(idantr!!).setValue(antrian)
+
+                        var i: Intent = Intent(this, Code::class.java)
+                        i.putExtra("id", uid)
+                        i.putExtra("bgklantr", namabgkl)
+                        i.putExtra("namaantr", namaantr.text.toString())
+                        i.putExtra("contactantr", contactantr.text.toString())
+                        i.putExtra("noplatantr" ,no_platantr.text.toString())
+                        i.putExtra("tglantr", tgl)
+                        i.putExtra("jamantr", jam)
+                        i.putExtra("service", service)
+                        startActivity(i)
+
+                    }
+                    // Set the neutral/cancel button click listener
+                    builder.setNeutralButton("Cancel") { dialog, which ->
+                        // Do something when click the neutral button
+                    }
+                    val dialog = builder.create()
+                    // Display the alert dialog on interface
+                    dialog.show()
 
                 Toast.makeText(baseContext, "Kirim Antrian", Toast.LENGTH_LONG).show()
-
-                var i: Intent = Intent(this, Code::class.java)
-                i.putExtra("id", uid)
-                i.putExtra("bgklantr", namabgkl)
-                i.putExtra("namaantr", namaantr.text.toString())
-                i.putExtra("contactantr", contactantr.text.toString())
-                i.putExtra("noplatantr" ,no_platantr.text.toString())
-                i.putExtra("tglantr", tgl)
-                i.putExtra("jamantr", jam)
-                startActivity(i)
 
             }
             else{

@@ -1,5 +1,6 @@
 package id.ac.ukdw.timbangantri
 
+import android.app.Service
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,7 @@ class RiwayatAdapter(val list : ArrayList<Antrian>, val context: Context) : Recy
         holder.Contact?.text = doc.contact
         holder.Tgl?.text = doc.tgl
         holder.Waktu?.text = doc.jam
+        holder.Service?.text = doc.service
         holder.No_plat?.setOnClickListener { Toast.makeText(context, doc.no_plat, Toast.LENGTH_LONG).show() }
     }
 
@@ -39,6 +41,7 @@ class RiwayatAdapter(val list : ArrayList<Antrian>, val context: Context) : Recy
         var Contact : TextView? = null
         var Tgl : TextView? = null
         var Waktu : TextView? = null
+        var Service: TextView? = null
 
         init{
             Bgkl = view.findViewById(R.id.itm_toko) as TextView
@@ -47,6 +50,7 @@ class RiwayatAdapter(val list : ArrayList<Antrian>, val context: Context) : Recy
             Contact = view.findViewById(R.id.contactitm) as TextView
             Tgl = view.findViewById(R.id.tglitm) as TextView
             Waktu = view.findViewById(R.id.jamitm) as TextView
+            Service = view.findViewById(R.id.serviceitm) as TextView
         }
     }
 }

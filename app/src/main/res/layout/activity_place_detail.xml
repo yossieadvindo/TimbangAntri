@@ -129,6 +129,8 @@
         android:hint="no_plat"
         android:inputType="textPersonName" />
 
+    
+
     <Button
         android:id="@+id/btnsaveAntrian"
         android:layout_width="wrap_content"

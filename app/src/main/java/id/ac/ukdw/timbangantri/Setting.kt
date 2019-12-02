@@ -28,7 +28,15 @@ class Setting: AppCompatActivity() {
                     "\n" +
                     "Perpindahan ke TimbangAntri adalah proses penginputan data yang tercatat di masing-masing akun, sehingga sampai pada bengkel ang tertuju.\n" +
                     "\n" +
-                    "Waktu pelaksanaan antrian adalah sesuai dengan registrasi waktu sekarang. "
+                    "Waktu pelaksanaan antrian adalah sesuai dengan registrasi waktu sekarang. \n \n" +
+                    "\n" +
+                    "Keamanan\n" +
+                    "\n" +
+                    "Keamanan informasi Data Pribadi Anda adalah hal yang sangat penting bagi kami. Finarya memastikan bahwa informasi yang dikumpulkan akan disimpan dengan aman, namun harap diketahui bahwa tidak ada metode menyangkut transmisi data melalui internet, atau metode penyimpanan elektronik yang benar-benar 100% (seratus persen) aman. Kami berusaha untuk melindungi Data Pribadi Anda. Kami menyimpan informasi Data Pribadi Anda dengan cara:\n" +
+                    "\n" +
+                    "Membatasi akses ke dalam informasi Data Pribadi Anda;\n" +
+                    "\n" +
+                    "Secara aman menghancurkan informasi Data Pribadi Anda saat kami tidak lagi membutuhkannya untuk tujuan tertentu."
 
             val alertDialog = AlertDialog.Builder(this).create()
             alertDialog.setTitle("Privacy Policy")
@@ -50,7 +58,6 @@ class Setting: AppCompatActivity() {
 //            btnNegative.layoutParams = layoutParams
 
         }
-
 
     }
 

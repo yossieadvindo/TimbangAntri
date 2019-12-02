@@ -29,8 +29,9 @@ class Code : AppCompatActivity() {
         val no_plat :String = intent.getStringExtra("noplatantr")
         val tgl :String = intent.getStringExtra("tglantr")
         val jaml :String = intent.getStringExtra("jamantr")
+        val service: String = intent.getStringExtra("service")
 
-        var hasil= bgkl+"\n"+nama+"\n"+contact+"\n"+no_plat+"\n"+tgl+"\n"+jaml
+        var hasil= bgkl+"\n"+nama+"\n"+contact+"\n"+no_plat+"\n"+tgl+"\n"+jaml+"\n"+service
         qr=findViewById(R.id.qrcode) as ImageView
         txtData.text=nama+"\n"+tgl
         try{

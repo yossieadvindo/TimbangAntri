@@ -59,6 +59,37 @@ class Setting: AppCompatActivity() {
 
         }
 
+       imageView14.setOnClickListener {
+
+            var help: String = "Anda bingung memakai aplikasi ini? Tenang\n" +
+                    "\n" +
+                    "1. Jika anda ingin membooking urutan maka langkah yang harus anda lakukan yaitu\n" +
+                    "Pada Menu Utama pilih ikon Booking Service -> pilih nama bengkel yang diinginkan (search bila anda ingin cepat) -> masukan identitas anda dan pencet tombol pesan -> pilihlah service yang diinginkan -> simpan barkodenya -> tunjukan ke petugas bengkel\n\n" +
+                    "2. Jika anda ingin melihat riwayat booking : \n" +
+                    "Pada Menu Utama pilih Riwayat Service -> dan lihat riwayat yang anda lakukan\n\n" +
+                    "3. Jika anda ingin melihat daftar bengkel terdekat anda :\n" +
+                    "Pada Menu Utama pilih Bengkel Terdekat -> dan lihat bengkel didekat anda\n\n" +
+                    "4. Jika anda ingin mengetahui harga barang yang tersedia bisa cek di menu List Harga\n\n" +
+                    "Terima Kasih :) "
+
+            val alertDialog = AlertDialog.Builder(this).create()
+            alertDialog.setTitle("Help")
+            alertDialog.setMessage(help)
+
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OKE"
+            ) { dialog, which -> dialog.dismiss() }
+
+            alertDialog.show()
+
+            val btnPositive = alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL)
+
+            val layoutParams = btnPositive.layoutParams as LinearLayout.LayoutParams
+            layoutParams.weight = 10f
+            btnPositive.layoutParams = layoutParams
+
+        }
+
+
     }
 
     fun showAkun(){

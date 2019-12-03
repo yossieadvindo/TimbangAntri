@@ -62,7 +62,7 @@ class PlaceDetailActivity : AppCompatActivity() {
                     // Convert the color array to list
                     val colorsList = Arrays.asList(*bengkelArray)
                     //setTitle
-                    builder.setTitle("Select colors")
+                    builder.setTitle("Pilih Service")
                     //set multichoice
                     builder.setMultiChoiceItems(bengkelArray, checkedColorsArray) { dialog, which, isChecked ->
                         // Update the current focused item's checked status
